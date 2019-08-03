@@ -57,13 +57,7 @@ const Sidebar = props => {
     {
       title: 'Users',
       href: '/users',
-      icon: <PeopleIcon />,
-      subpages: [
-        {
-          title: 'Subpage1',
-          href: '/dashboard1'
-        }
-      ]
+      icon: <PeopleIcon />
     },
     {
       title: 'Products',
