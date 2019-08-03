@@ -4,7 +4,7 @@ import { Grid } from "@material-ui/core";
 import { Helmet } from "react-helmet";
 
 import {
-  Budget,
+  BudgetChart,
   TotalUsers,
   TasksProgress,
   TotalProfit,
@@ -30,7 +30,7 @@ const Dashboard = () => {
       </Helmet>
       <Grid container spacing={4}>
         <Grid item lg={3} sm={6} xl={3} xs={12}>
-          <Budget />
+          <BudgetChart />
         </Grid>
         <Grid item lg={3} sm={6} xl={3} xs={12}>
           <TotalUsers />
