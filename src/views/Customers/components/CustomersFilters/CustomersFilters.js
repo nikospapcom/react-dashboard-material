@@ -4,6 +4,7 @@ import { makeStyles } from "@material-ui/core/styles";
 import { Drawer, Typography, IconButton, colors } from "@material-ui/core";
 import clsx from "clsx";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
+import CollapsedFilter from "./CollapsedFilter";
 
 const drawerWidth = 240;
 
@@ -26,6 +27,9 @@ const useStyles = makeStyles(theme => ({
   },
   filterButton: {
     marginRight: theme.spacing(1)
+  },
+  content: {
+    padding: theme.spacing(2),
   }
 }));
 
@@ -36,13 +40,19 @@ const CustomersFilters = props => {
 
   const filters = [
     {
-      name: 'Name'
+      name: "Name"
     },
     {
-      name: 'Email'
+      name: "Email"
     },
     {
-      name: 'Location'
+      name: "Location"
+    },
+    {
+      name: "Phone"
+    },
+    {
+      name: "Sex"
     }
   ];
 
@@ -58,17 +68,24 @@ const CustomersFilters = props => {
     >
       <div {...rest} className={clsx(classes.root, className)}>
         <div className={classes.header}>
-        <IconButton
+          <IconButton
             color="inherit"
             className={classes.filterButton}
             aria-label="close"
-            size="small" 
+            size="small"
           >
             <ArrowForwardIcon fontSize="small" />
           </IconButton>
           <Typography variant="h5" className={classes.headerTitle}>
             Filters
           </Typography>
+        </div>
+        <div className={classes.content}>
+          {filters.map((filter, index) => (
+            <div key={index}>
+              <CollapsedFilter filter={filter} />
+            </div>
+          ))}
         </div>
       </div>
     </Drawer>
