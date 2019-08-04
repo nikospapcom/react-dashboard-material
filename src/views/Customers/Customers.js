@@ -1,11 +1,14 @@
-import React,{ useState } from "react";
+import React, { useState } from "react";
 import { makeStyles } from "@material-ui/styles";
-import { Grid } from "@material-ui/core";
 import { Helmet } from "react-helmet";
 
-import { CustomersToolbar, CustomersTable } from './components';
+import {
+  CustomersToolbar,
+  CustomersTable,
+  CustomersFilters
+} from "./components";
 
-import mockData from './data';
+import mockData from "./data";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -18,15 +21,29 @@ const Customers = () => {
 
   const [users] = useState(mockData);
 
+  const [openFilters, setOpenFilters] = useState(false);
+
+  const handleFiltersOpen = () => {
+    setOpenFilters(true);
+  };
+
+  const handleFiltersClose = () => {
+    setOpenFilters(false);
+  };
+
   return (
     <div className={classes.root}>
       <Helmet>
         <title>Customers</title>
       </Helmet>
-      <CustomersToolbar />
+      <CustomersToolbar onFiltersOpen={handleFiltersOpen}  />
       <div className={classes.content}>
         <CustomersTable users={users} />
       </div>
+      <CustomersFilters
+        onClose={handleFiltersClose}
+        open={openFilters}
+      />
     </div>
   );
 };

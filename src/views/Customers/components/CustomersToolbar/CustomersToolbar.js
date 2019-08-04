@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const CustomersToolbar = props => {
-  const { className, ...rest } = props;
+  const { className, onFiltersOpen, ...rest } = props;
 
   const classes = useStyles();
 
@@ -60,6 +60,7 @@ const CustomersToolbar = props => {
             color="primary"
             className={classes.filterButton}
             aria-label="filter"
+            onClick={onFiltersOpen}
           >
             <FilterListIcon />
           </IconButton>
@@ -70,7 +71,8 @@ const CustomersToolbar = props => {
 };
 
 CustomersToolbar.propTypes = {
-  className: PropTypes.string
+  className: PropTypes.string,
+  onFilterOpen: PropTypes.func
 };
 
 export default CustomersToolbar;
