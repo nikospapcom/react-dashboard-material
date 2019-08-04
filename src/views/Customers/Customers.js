@@ -21,7 +21,7 @@ const Customers = () => {
 
   const [users] = useState(mockData);
 
-  const [openFilters, setOpenFilters] = useState(false);
+  const [openFilters, setOpenFilters] = useState(true);
 
   const handleFiltersOpen = () => {
     setOpenFilters(true);
