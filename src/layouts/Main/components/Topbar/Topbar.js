@@ -2,7 +2,8 @@ import React, { useState } from "react";
 import { Link as RouterLink } from "react-router-dom";
 import clsx from "clsx";
 import PropTypes from "prop-types";
-import { fade, makeStyles } from "@material-ui/core/styles";
+import { makeStyles } from "@material-ui/styles";
+import { fade } from "@material-ui/core/styles";
 import {
   AppBar,
   Toolbar,
@@ -56,7 +57,7 @@ const useStyles = makeStyles(theme => ({
     color: "inherit"
   },
   inputInput: {
-    padding: theme.spacing(1, 1, 1, 7),
+    padding: theme.spacing(1, 1, 1, 6),
     transition: theme.transitions.create("width"),
     width: "100%",
     [theme.breakpoints.up("sm")]: {
