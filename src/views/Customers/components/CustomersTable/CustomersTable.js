@@ -6,7 +6,6 @@ import PerfectScrollbar from "react-perfect-scrollbar";
 import { makeStyles } from "@material-ui/styles";
 import {
   Card,
-  CardHeader,
   CardActions,
   CardContent,
   Avatar,
@@ -18,19 +17,15 @@ import {
   TableRow,
   Typography,
   TablePagination,
-  IconButton,
-  Divider
+  IconButton
 } from "@material-ui/core";
 
-import { SearchInput } from 'components';
-
-import 'perfect-scrollbar/css/perfect-scrollbar.css';
+import "perfect-scrollbar/css/perfect-scrollbar.css";
 
 import {
-  MoreVert as MoreVertIcon,
   EditOutlined as EditIcon,
   RemoveRedEyeRounded as PreviewIcon,
-  DeleteOutline as DeleteIcon,
+  DeleteOutline as DeleteIcon
 } from "@material-ui/icons";
 
 import { getInitials } from "helpers";
@@ -38,12 +33,6 @@ import { getInitials } from "helpers";
 const useStyles = makeStyles(theme => ({
   root: {
     marginTop: theme.spacing(2)
-  },
-  cardHeader: {
-    color: theme.palette.primary.dark
-  },
-  cardHeaderActions: {
-    marginTop: theme.spacing(1)
   },
   content: {
     padding: 0
@@ -63,6 +52,9 @@ const useStyles = makeStyles(theme => ({
   },
   actionButton: {
     marginLeft: theme.spacing(2)
+  },
+  actionsContainer: {
+    whiteSpace: "nowrap"
   },
   scrollbar: {
     position: "relative",
@@ -123,18 +115,6 @@ const UsersTable = props => {
 
   return (
     <Card {...rest} className={clsx(classes.root, className)}>
-      <CardHeader
-        avatar={
-          <SearchInput placeholder="Search customer…" />
-        }
-        action={
-          <IconButton aria-label="settings" color="inherit" className={classes.cardHeaderActions}>
-            <MoreVertIcon />
-          </IconButton>
-        }
-        className={classes.cardHeader}
-      />
-      <Divider className={classes.divider} />
       <CardContent className={classes.content}>
         <PerfectScrollbar className={classes.scrollbar}>
           <div className={classes.inner}>
@@ -193,14 +173,29 @@ const UsersTable = props => {
                     <TableCell>
                       {moment(user.createdAt).format("DD/MM/YYYY")}
                     </TableCell>
-                    <TableCell align="right">
-                      <IconButton size="small" aria-label="edit" className={classes.actionButton}>
+                    <TableCell
+                      align="right"
+                      className={classes.actionsContainer}
+                    >
+                      <IconButton
+                        size="small"
+                        aria-label="edit"
+                        className={classes.actionButton}
+                      >
                         <EditIcon fontSize="small" />
                       </IconButton>
-                      <IconButton size="small" aria-label="preview" className={classes.actionButton}>
+                      <IconButton
+                        size="small"
+                        aria-label="preview"
+                        className={classes.actionButton}
+                      >
                         <PreviewIcon fontSize="small" />
                       </IconButton>
-                      <IconButton size="small" aria-label="delete" className={classes.actionButton}>
+                      <IconButton
+                        size="small"
+                        aria-label="delete"
+                        className={classes.actionButton}
+                      >
                         <DeleteIcon fontSize="small" />
                       </IconButton>
                     </TableCell>
