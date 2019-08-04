@@ -14,10 +14,6 @@ const useStyles = makeStyles(theme => ({
   drawer: {
     width: drawerWidth,
     flexShrink: 0,
-    [theme.breakpoints.up('lg')]: {
-      marginTop: 64,
-      height: 'calc(100% - 64px)'
-    }
   },
   drawerPaper: {
     width: drawerWidth
@@ -60,7 +56,8 @@ const CustomersFilters = props => {
 
   return (
     <Drawer
-      variant={isDesktop ? 'persistent' : 'temporary'}
+      // variant={isDesktop ? 'persistent' : 'temporary'} 
+      variant="temporary"
       anchor="right"
       onClose={onClose}
       open={open}
