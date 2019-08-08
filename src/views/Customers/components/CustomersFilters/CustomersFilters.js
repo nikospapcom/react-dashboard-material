@@ -1,7 +1,13 @@
 import React from "react";
 import PropTypes from "prop-types";
 import { makeStyles } from "@material-ui/core/styles";
-import { Drawer, Typography, IconButton, colors } from "@material-ui/core";
+import {
+  Drawer,
+  Typography,
+  IconButton,
+  colors,
+  Button
+} from "@material-ui/core";
 import clsx from "clsx";
 import ArrowForwardIcon from "@material-ui/icons/ArrowForward";
 import CollapsedFilter from "./CollapsedFilter";
@@ -9,7 +15,7 @@ import CollapsedFilter from "./CollapsedFilter";
 const drawerWidth = 240;
 
 const useStyles = makeStyles(theme => ({
-  root: {},
+  root: { },
   drawer: {
     width: drawerWidth,
     flexShrink: 0
@@ -29,6 +35,9 @@ const useStyles = makeStyles(theme => ({
     marginRight: theme.spacing(1)
   },
   content: {
+    padding: theme.spacing(2)
+  },
+  footer: {
     padding: theme.spacing(2),
   }
 }));
@@ -86,6 +95,11 @@ const CustomersFilters = props => {
               <CollapsedFilter filter={filter} />
             </div>
           ))}
+        </div>
+        <div className={classes.footer}>
+          <Button color="primary" variant="contained" fullWidth>
+            Apply filters
+          </Button>
         </div>
       </div>
     </Drawer>
