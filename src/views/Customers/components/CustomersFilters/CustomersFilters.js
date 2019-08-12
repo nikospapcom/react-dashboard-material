@@ -82,6 +82,7 @@ const CustomersFilters = props => {
             className={classes.filterButton}
             aria-label="close"
             size="small"
+            onClick={onClose}
           >
             <ArrowForwardIcon fontSize="small" />
           </IconButton>
