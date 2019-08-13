@@ -49,7 +49,21 @@ const Sidebar = props => {
     {
       title: "Customers",
       href: "/customers",
-      icon: <PeopleOutlineIcon />
+      icon: <PeopleOutlineIcon />,
+      subpages: [
+        {
+          title: 'All Customers',
+          href: "/customers",
+        },
+        {
+          title: 'Customer Preview',
+          href: "/customers/preview",
+        },
+        {
+          title: 'Customer Edit',
+          href: "/customers/edit",
+        }
+      ]
     },
     {
       title: "Users",

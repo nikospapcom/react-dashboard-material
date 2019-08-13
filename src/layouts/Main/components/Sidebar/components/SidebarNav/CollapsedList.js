@@ -92,7 +92,7 @@ const CollapsedItems = props => {
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List disablePadding>
           {page.subpages.map(subpage => (
-            <ListItem disableGutters key={subpage.title}>
+            <ListItem className={classes.item} disableGutters key={subpage.title}>
               <Button
                 activeClassName={classes.buttonNestedActive}
                 className={classes.buttonNested}
