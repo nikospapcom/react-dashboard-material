@@ -10,7 +10,7 @@ import {
   PeopleOutline as PeopleOutlineIcon
 } from "@material-ui/icons";
 
-import { Profile, SidebarNav, UpgradePlan } from "./components";
+import { Profile, SidebarNav } from "./components";
 
 const useStyles = makeStyles(theme => ({
   drawer: {
@@ -110,7 +110,6 @@ const Sidebar = props => {
         <Profile />
         <Divider className={classes.divider} />
         <SidebarNav className={classes.nav} pages={pages} />
-        <UpgradePlan />
       </div>
     </Drawer>
   );

@@ -35,7 +35,7 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const CustomersToolbar = props => {
-  const { className, onFiltersOpen, ...rest } = props;
+  const { className, onFiltersOpen, onPanelOpen, ...rest } = props;
 
   const classes = useStyles();
 
@@ -53,7 +53,7 @@ const CustomersToolbar = props => {
           </div>
         </Grid>
         <Grid item sm={6} xs={12} className={classes.actionColumn}>
-          <Button color="primary" variant="contained">
+          <Button color="primary" variant="contained" onClick={onPanelOpen}>
             Create customer
           </Button>
           <IconButton
@@ -72,7 +72,8 @@ const CustomersToolbar = props => {
 
 CustomersToolbar.propTypes = {
   className: PropTypes.string,
-  onFilterOpen: PropTypes.func
+  onFiltersOpen: PropTypes.func,
+  onPanelOpen: PropTypes.func
 };
 
 export default CustomersToolbar;

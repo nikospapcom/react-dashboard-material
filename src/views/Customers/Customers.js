@@ -5,7 +5,8 @@ import { Helmet } from "react-helmet";
 import {
   CustomersToolbar,
   CustomersTable,
-  CustomersFilters
+  CustomersFilters,
+  CustomersPanel
 } from "./components";
 
 import mockData from "./data";
@@ -29,19 +30,37 @@ const Customers = () => {
     setOpenFilters(false);
   };
 
+  const [openPanel, setOpenPanel] = useState(false);
+  const handlePanelOpen = () => {
+    setOpenPanel(true);
+  };
+  const handlePanelClose = () => {
+    setOpenPanel(false);
+  };
+
+  const user = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    phone: "",
+    address: "",
+    postcode: "",
+    state: "",
+    country: "",
+    gender: "male"
+  }
+
   return (
     <div className={classes.root}>
       <Helmet>
         <title>Customers</title>
       </Helmet>
-      <CustomersToolbar onFiltersOpen={handleFiltersOpen}  />
+      <CustomersToolbar onFiltersOpen={handleFiltersOpen} onPanelOpen={handlePanelOpen} />
       <div className={classes.content}>
         <CustomersTable users={users} />
       </div>
-      <CustomersFilters
-        onClose={handleFiltersClose}
-        open={openFilters}
-      />
+      <CustomersFilters onClose={handleFiltersClose} open={openFilters} />
+      <CustomersPanel onClose={handlePanelClose} open={openPanel} user={user} />
     </div>
   );
 };
