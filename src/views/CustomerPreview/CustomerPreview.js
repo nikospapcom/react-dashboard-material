@@ -3,7 +3,12 @@ import { makeStyles } from "@material-ui/styles";
 import { Helmet } from "react-helmet";
 
 import { Grid } from "@material-ui/core";
-import { ProfileOverview, TeamsList, UserActivity } from "./components";
+import {
+  ProfileOverview,
+  TeamsList,
+  UserActivity,
+  UserPerformance
+} from "./components";
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -26,6 +31,7 @@ const CustomerPreview = () => {
         </Grid>
         <Grid item sm={8} xs={12}>
           <UserActivity />
+          <UserPerformance />
         </Grid>
       </Grid>
     </div>
