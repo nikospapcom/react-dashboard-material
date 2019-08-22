@@ -27,7 +27,7 @@ const useStyles = makeStyles(theme => ({
     paddingBottom: 0
   },
   card: {
-    maxWidth: 345
+    marginBottom: theme.spacing(2)
   },
   media: {
     height: 140
@@ -211,16 +211,6 @@ const ProfileOverview = props => {
             className={classes.chipItem}
           />
         </div>
-        <Divider className={classes.divider} />
-        <Typography
-          variant="body1"
-          color="textSecondary"
-          component="p"
-          align="center"
-        >
-          Followers
-        </Typography>
-        {/* <Divider className={classes.divider} /> */}
       </CardContent>
     </Card>
   );
